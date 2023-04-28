@@ -39,7 +39,7 @@ class UserAuthenticationController < ApplicationController
   def create
     @user = User.new
     @user.email = params.fetch("query_email")
-    @user.password = params.fetch("query_password")
+    @user.password = params.fetch("query_password") 
     @user.password_confirmation = params.fetch("query_password_confirmation")
 
     save_status = @user.save
