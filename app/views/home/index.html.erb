@@ -1,0 +1,46 @@
+<h1>Your todo list</h1>
+
+<h2>
+  Add a new todo
+</h2>
+
+<form action="/insert_todo"
+  method="post">
+
+  <div>
+   <label for="content_box">
+      Describe a task:
+   </label>
+
+   <input type="text" id="content_box" name="query_content">
+  </div>
+
+  <button>
+  Add to next Up
+  </button>
+</form>  
+
+<div class="next_up" style="color: darkorange;">
+  <h2>Next up</h2>
+  <ul>
+    <li><%= @the_todo.content %></li>
+      <a href="/delete_todo/<%= @the_todo.id %>">Delete</a> 
+        <%= time_ago_in_words(@the_todo.created_at) %> ago
+  </ul>
+  <p>test</p>
+</div>
+
+<div class="in_progress" style="color: darkgreen">
+   <h2>In Progress</h2>
+    <li><%= @the_todo.content %></li>
+    <a href="/delete_todo/<%= @the_todo.id %>">Delete</a> 
+       <%= time_ago_in_words(@the_todo.created_at) %> ago
+</div>
+
+<div class="done" style="color"grey">
+  <h2>Done</h2>
+     <li><%= @the_todo.content %></li>
+    <a href="/delete_todo/<%= @the_todo.id %>">Delete</a> 
+       <%= time_ago_in_words(@the_todo.created_at) %> ago
+
+</div>

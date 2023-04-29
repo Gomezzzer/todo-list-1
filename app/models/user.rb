@@ -9,6 +9,7 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
+  has_many :todos 
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :email, :presence => true
   has_secure_password
